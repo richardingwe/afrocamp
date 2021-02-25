@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AfroCamp</title>
+	<link type="text/css" rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/w3.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-sm w3-blue bg-dark justify-content-end fixed-top">
+		<a class="navbar-brand" href="/">AfroCamp</a>
+		<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<% if (!currentUser) { %>
+				<li>
+					<a class="nav-link" href="/register">Sign Up</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/login">Login</a>
+				</li>
+				<% } else { %>
+				<li><a class="nav-link text-white text-bold" href="">Signed In as <%= currentUser.username %></a></li>
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Logout</a>
+				</li>
+				<% } %> 
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class="container w3-padding-top">
+		<% if (error && error.length > 0) { %> 
+			<div class="alert alert-danger" role="alert">
+				<h6><%= error %> </h6>
+			</div>
+		<% } %> 
+		<% if (success && success.length > 0) { %> 
+			<div class="alert alert-success" role="alert">
+				<h6><%= success %> </h6>
+			</div>
+		<% } %> 
+	</div>
+
+	
+	
+	
+	

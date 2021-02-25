@@ -1,0 +1,31 @@
+<%- include ("../partials/header") %>
+
+<div class="w3-container">
+    <div class="w3-content w3-center">
+        <h1>Edit <%= campground.name %> </h1>
+        <div>
+            <form action="/<%= campground._id %>/?_method=PUT" method="POST">
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="campground[name]" value="<%= campground.name %>">
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="number" name="campground[price]" value="<%= campground.price %>" min="100" step="100" >
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="campground[image]" value="<%= campground.image %>">
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="campground[description]" value="<%= campground.description %>">
+                </div>
+                <div class="w3-section">
+                    <button type="submit" class="w3-block w3-btn w3-red">Submit</button>
+                </div>
+            </form>
+            <p>
+                <a href="/<%= campground._id %>" >Go Back</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %>

@@ -1,0 +1,18 @@
+<%- include ("./partials/header") %>
+<br>
+<div class="w3-container">
+	<div class="w3-content">
+		<h1 class="w3-center">Sign Up</h1> 
+
+		<form action="/register" method="POST">
+			<div class="w3-section">
+		    	<input type="text" name="username" placeholder="username" class="w3-input">
+		    </div>
+			<div class="w3-section">
+		    	<input type="password" name="password" placeholder="password" class="w3-input">
+		    </div>
+		    <button class="w3-button w3-red w3-block">Sign Up</button>
+		</form>
+	</div>
+</div>
+<%- include ("./partials/footer") %>

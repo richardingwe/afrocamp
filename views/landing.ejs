@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AfroCamp</title>
+		<link type="text/css" rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+    </head>
+    <body>
+    
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landing-header">
+ 		<h1>Welcome to AfroCamp!</h1>
+		<a href="/campgrounds" class="btn btn-lg btn-primary">View All Campgrounds</a>
+    </div>
+    
+    <ul class="slideshow">
+    		  <li><img src="img/img_1.jpg" class="imgSize thumbnail"></li>	
+    	
+    		  <li><img src="img/img_3.jpg" class="imgSize thumbnail"></li>	
+    	
+    		  <li><img src="img/img_4.jpg" class="imgSize thumbnail"></li>	
+    	
+    		  <li><img src="img/img_5.jpg" class="imgSize thumbnail"></li>	
+    	
+    		  <li><img src="img/img_2.jpg" class="imgSize thumbnail"></li>	
+    	</ul>
+
+<%- include ("./partials/footer") %>

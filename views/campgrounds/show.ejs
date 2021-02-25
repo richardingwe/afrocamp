@@ -1,0 +1,62 @@
+<%- include ("../partials/header") %>
+
+<div class="w3-grey w3-animate-zoom" style="padding:20px 50px;background-image:url('img/img_6.jpg');
+background-size:cover;">
+
+<a class="w3-btn w3-block w3-red" href="/campgrounds">Go Back</a>
+
+<div class="w3-section w3-row-padding">
+	<div class="w3-twothird">
+	    <div class="w3-card-4 w3-text-white">
+	      	<div class="w3-display-container">
+				<img src="/<%= campground.image %>" class="" style="width: 100%">
+				<div class="w3-container">
+					<h4 class="w3-left">
+						<a href=""><%= campground.name %></a>
+					</h4>
+					<h4 class="w3-right">N<%= campground.price %>/night</h4>
+				</div>
+			</div>	
+			<div class="w3-container">
+				<p><%= campground.description%></p>
+				<p class="w3-text-red">
+					<em>Created By <%= campground.author.username %>
+						
+					</em>
+				</p>
+				<% if(currentUser && campground.author.id.equals(currentUser._id)){ %> 
+							<a href="/<%= campground._id %>/edit" class="btn btn-warning btn-sm">Edit</a>
+							<form id="delete-form" action="/<%= campground._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger btn-sm">Delete</button><br>
+							</form>
+							<br>
+						<% } %> 
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-third w3-container w3-center">
+    <div class="w3-card-4">
+      <div class="w3-container">
+      	<a class="w3-btn w3-circle w3-xlarge w3-right w3-white w3-margin-top w3-margin-bottom" href="/<%= campground._id %>/comments/new"><i>+</i></a>
+      </div>
+      <div class="w3-container w3-white">
+		<% campground.comments.forEach((comment) => { %>
+			<strong class="float-left"><%= comment.author.username %></strong>
+			<span class="float-right">10 days ago</span>
+			<p class="float-left">
+				<%= comment.text %>
+			</p>
+			<br>
+			<br>
+			<% if(currentUser && comment.author.id.equals(currentUser._id)){ %> 
+				<a href="/<%= campground._id %>/comments/<%= comment._id %>/edit " class="w3-btn text-center w3-red w3-block">Edit</a>
+			<% } %>
+			<hr>
+		<% }); %>
+	</div>	
+  </div>
+</div>
+
+
+<%- include ("../partials/footer") %>

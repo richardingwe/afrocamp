@@ -1,0 +1,13 @@
+.thumbnail img {
+    width: 100%;
+}
+
+#delete-form {
+    display: inline;
+}
+.bgimg {
+  background-image: url('../img/img_7.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}

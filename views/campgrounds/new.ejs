@@ -1,0 +1,30 @@
+<%- include ("../partials/header") %>
+
+<div class="w3-container">
+    <div class="w3-content w3-center">
+        <br>
+        <h1>Create A New Campground</h1>
+        <div>
+            <form action="/campgrounds" method="POST">
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="name" placeholder="name" required="">
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="number" name="price" placeholder="price" min="100" step="100" required="">
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="image" placeholder="image name" required="">
+                </div>
+                <div class="w3-section">
+                    <input class="w3-input" type="text" name="description" placeholder="description" required="">
+                </div>
+                <div class="w3-section">
+                    <button type="submit" class="w3-block w3-btn w3-red">Submit</button>
+                </div>
+            </form>
+            <a href="/campgrounds">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<%- include ("../partials/footer") %>
